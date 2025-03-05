@@ -5,21 +5,6 @@ Welcome to my LeetCode solutions repository! 🚀 Here, you'll find my solutions
 ## 📌 About
 This repository serves as a collection of my problem-solving journey on LeetCode. It includes well-documented solutions in different programming languages, along with explanations where necessary.
 
-## 📂 Folder Structure
-```
-LeetCode/
-│-- Easy/
-│-- Medium/
-│-- Hard/
-│-- Topic-Wise/
-│   │-- Arrays/
-│   │-- LinkedList/
-│   │-- DynamicProgramming/
-│   │-- Graphs/
-│   │-- ...
-│-- README.md
-```
-
 ## 🚀 Solutions Breakdown
 - ✅ **Easy**: Beginner-friendly problems to get started.
 - ⚡ **Medium**: Moderate difficulty problems requiring deeper understanding.

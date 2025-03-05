@@ -43,7 +43,7 @@ I primarily solve problems in:
 4. Try solving it yourself before referring to the solution.
 
 ## 🎯 Goals
-- Solve at least **X** problems per week.
+- Solve at least **15** problems per week.
 - Improve problem-solving skills.
 - Prepare for coding interviews.
 

@@ -7,7 +7,7 @@ This repository serves as a collection of my problem-solving journey on LeetCode
 
 ## 📂 Folder Structure
 ```
-LeetCode-Solutions/
+LeetCode/
 │-- Easy/
 │-- Medium/
 │-- Hard/

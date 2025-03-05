@@ -51,5 +51,5 @@ I primarily solve problems in:
 Feel free to open an issue or submit a PR if you find a better solution! Let's learn together. 😊
 
 ## 📬 Contact
-📧 Reach out at ymohanasuryavamsi47@gmail.com or connect on YerupalleVamsi.
+📧 Reach out at ymohanasuryavamsi47@gmail.com or connect on https://github.com/YerupalleVamsi.
 

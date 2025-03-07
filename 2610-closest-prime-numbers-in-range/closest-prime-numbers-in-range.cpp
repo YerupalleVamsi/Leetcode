@@ -1,16 +1,18 @@
 class Solution {
 public:
-  bool isPrime(int n) {
-        if (n < 2) return false;
-        for (int i = 2; i * i <= n; i++) {
-            if (n % i == 0) return false;
-        }
-        return true;
-    }
     vector<int> closestPrimes(int left, int right) {
+        vector<bool> isPrime(right + 1, true);
+        isPrime[0] = isPrime[1] = false;
+        for (int i = 2; i * i <= right; i++) {
+            if (isPrime[i]) {
+                for (int j = i * i; j <= right; j += i) {
+                    isPrime[j] = false;
+                }
+            }
+        }
         vector<int>ans;
         for(int i=left;i<=right;i++){
-            if(isPrime(i))
+            if(isPrime[i])
             ans.push_back(i);
             
             }

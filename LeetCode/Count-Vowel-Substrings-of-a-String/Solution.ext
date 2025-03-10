@@ -1,0 +1,5 @@
+Input: word = "aeiouu"
+Output: 2
+Explanation: The vowel substrings of word are as follows (underlined):
+- "aeiouu"
+- "aeiouu"

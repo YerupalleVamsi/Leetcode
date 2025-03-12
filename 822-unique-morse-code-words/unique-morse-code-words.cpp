@@ -3,9 +3,9 @@ public:
     int uniqueMorseRepresentations(vector<string>& words) {
  unordered_set<string>unq;
   vector<string> m = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."};
-        for(int i=0;i<words.size();i++){
+        for(string w:words){
             string news="";
-            for(char x : words[i]){
+            for(char x : w){
                 news+=m[x-'a'];
             }
             unq.insert(news);

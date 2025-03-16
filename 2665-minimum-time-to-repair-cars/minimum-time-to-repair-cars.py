@@ -10,7 +10,7 @@ class Solution:
 
     def repairCars(self, ranks: List[int], cars: int) -> int:
         left = 1
-        right = min(ranks) * (cars ** 2)
+        right = max(ranks) * (cars ** 2)
 
         while left < right:
             mid = (left + right) // 2
@@ -18,7 +18,6 @@ class Solution:
                 right = mid
             else:
                 left = mid + 1
-
         return left
 
 

@@ -1,4 +1,4 @@
-class Solution {
+class Solution { // will solve using dsu later ...
 public:
     void dfs(int node, vector<vector<int>>&gr , vector<int> &vis , int compNum , unordered_map<int,int>&nodeToComp){
         vis[node]=1;

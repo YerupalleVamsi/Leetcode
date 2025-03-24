@@ -6,9 +6,9 @@ public:
         for (auto& meeting : meetings) {
             int s = meeting[0], e = meeting[1];
             if (s > last) {
-                cnt += s - last;
+            cnt += s - last;
             }
-            last = max(last, e + 1);
+    last = max(last, e + 1);
         }
         if (days >= last) {
             cnt += days - last + 1;

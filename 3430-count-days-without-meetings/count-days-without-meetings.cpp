@@ -10,11 +10,9 @@ public:
             }
             last = max(last, e + 1);
         }
-
         if (days >= last) {
             cnt += days - last + 1;
         }
-
         return cnt;
     }
 };

@@ -1,0 +1,23 @@
+class Solution(object):
+    def checkValidCuts(self, n, rectangles):
+        return self.isValidCut(rectangles, 0, 2) or self.isValidCut(rectangles, 1, 3) 
+    
+    def isValidCut(self, rectangles, sortindex, end):
+        rectangles = sorted(rectangles, key=lambda x: x[sortindex])
+        cnt = 1
+        currend = rectangles[0][end]
+        
+        for i in range(1, len(rectangles)):
+            if rectangles[i][sortindex] < currend:
+                currend = max(rectangles[i][end], currend)
+            else:
+                cnt += 1
+                currend = rectangles[i][end]
+                
+        return cnt > 2
+
+
+
+
+       
+        

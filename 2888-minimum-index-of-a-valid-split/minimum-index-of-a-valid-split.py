@@ -17,8 +17,4 @@ class Solution:
             rightcount=totalcount-leftcount 
             if leftcount>(i+1)//2 and rightcount>(len(nums)-(i+1))//2:
                 return i
-        return -1           
-
-
-
-        
+        return -1                   

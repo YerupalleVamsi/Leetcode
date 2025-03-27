@@ -1,18 +1,15 @@
 class NumArray {
 public:
-    vector<int>presum;
+    vector<int>pre_sum;
     NumArray(vector<int>& nums) {
        int n=nums.size();
-       presum.resize(n+1,0);
+       pre_sum.resize(n+1,0);
        for(int i=0;i<n;i++){
-        presum[i+1]=presum[i]+nums[i];
+        pre_sum[i+1]=pre_sum[i]+nums[i];
        }
-           
-
     }
-    
     int sumRange(int left, int right) {
-        return presum[right+1]-presum[left];
+        return pre_sum[right+1]-pre_sum[left];
     }
 };
 

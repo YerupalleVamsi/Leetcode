@@ -2,6 +2,8 @@ from typing import List
 
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
+        if len(nums)/2 == sum(nums):
+            return len(nums)
         index_map = {0: -1}  
         max_length = 0
         diff = 0

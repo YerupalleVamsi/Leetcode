@@ -1,23 +1,20 @@
+from typing import List
+
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
-        n=len(nums)
-        if n==1:
-            return 0
-        n1,n2=0,0
-        map={0:-1}
-        diff=0
-        m_length=0
-        for i,num in enumerate(nums):
-            if num==1:
-                n1+=1
+        index_map = {0: -1}  
+        max_length = 0
+        diff = 0
+        for i, num in enumerate(nums):
+            diff += 1 if num == 1 else -1  
+
+            if diff in index_map:
+                max_length = max(max_length, i - index_map[diff]) #so if i get the same diff again ill update the length 
             else:
-                n2+=1
-            diff=n1-n2
-            if diff not in map:
-                map[diff]=i
-            else:
-                m_length=max(m_length,i-map[diff])
-        return m_length
+                index_map[diff] = i  # Store first occurrence only
+
+        return max_length
+
             
 
 

@@ -8,8 +8,7 @@ public:
                 if(count==k){
                     boq++;
                     count=0;
-                }
-            }
+                }}
             else{
                 count=0;
             }

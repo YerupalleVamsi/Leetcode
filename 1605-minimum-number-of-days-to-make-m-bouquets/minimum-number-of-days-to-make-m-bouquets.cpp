@@ -14,7 +14,6 @@ public:
                 count=0;
             }
             if(boq>=m)return true;
-
         }
         return false;
     }

@@ -6,7 +6,6 @@ public:
             gr[it[0]].emplace_back(it[1], it[2]);
             gr[it[1]].emplace_back(it[0], it[2]);
         }
-
         priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<>> pq;
         vector<long long> dist(n, LLONG_MAX);
         vector<int> ways(n, 0);

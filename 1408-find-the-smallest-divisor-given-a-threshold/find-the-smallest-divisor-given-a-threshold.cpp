@@ -4,10 +4,8 @@ public:
         int low=1;
         int high=-1;
         for(int x:nums)
-        {
-            if(x>high){
-                high=x;
-            }
+        {           if(x>high){
+                high=x;}
         }
         int mindiv=-1;
         while(low<=high){

@@ -21,9 +21,7 @@ public:
             long long dis = pq.top().first;
             int node = pq.top().second;
             pq.pop();
-
             if (dis > dist[node]) continue;
-
             for (auto it : gr[node]) {
                 int adjNode = it.first;
                 int weight = it.second;
@@ -37,7 +35,6 @@ public:
                 }
             }
         }
-
         return ways[n - 1] % mod;
     }
 };

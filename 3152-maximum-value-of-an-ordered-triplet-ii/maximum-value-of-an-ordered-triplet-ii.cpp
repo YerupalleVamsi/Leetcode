@@ -8,7 +8,6 @@ public:
             res=max(res,(long long)(diff)*i);
             diff=max(diff,maxi-i);
             maxi=max(maxi,i);
-
         }
         return res;
         

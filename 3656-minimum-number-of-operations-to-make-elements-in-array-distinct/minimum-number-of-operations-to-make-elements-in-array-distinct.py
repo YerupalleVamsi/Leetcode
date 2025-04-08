@@ -8,6 +8,7 @@ class Solution:
             count+=1
         if len(nums)==len(set(nums)):
             return count 
+    
         if len(nums)!=len(set(nums)) and len(nums)<=3:
             count+=1
         return count

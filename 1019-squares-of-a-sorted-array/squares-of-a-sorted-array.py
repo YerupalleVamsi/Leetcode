@@ -10,12 +10,10 @@ class Solution:
             if left>right:
                 ans[index]=left
                 L+=1
-                index-=1
-            elif left<=right:
+            else:
                 ans[index]=right
                 R-=1
-                index-=1
-                
+            index-=1       
         return ans           
 
         

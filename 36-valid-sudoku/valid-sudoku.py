@@ -3,7 +3,6 @@ class Solution:
         rows=defaultdict(set)
         cols=defaultdict(set)
         s=defaultdict(set)
-
         for r in range(9):
             for c in range(9):
                 if board[r][c]=='.':

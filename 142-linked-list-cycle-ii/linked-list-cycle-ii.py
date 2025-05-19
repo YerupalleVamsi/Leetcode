@@ -10,14 +10,16 @@ class Solution:
             return None
         fast=head
         slow=head
+        has_cycle=False
         while(fast!=None and fast.next!=None):
             fast=fast.next.next
             slow=slow.next
             if fast==slow:
+                has_cycle=True
                 break
-        else:
+        if not has_cycle:
             return None
-            
+
         while head!=fast:
             head=head.next
             fast=fast.next

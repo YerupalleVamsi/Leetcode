@@ -15,6 +15,10 @@ class Solution:
          return prev
 
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        if not head:
+            return False
+        if not head.next:
+            return True
         slow=head
         fast=head
         while(fast and fast.next):

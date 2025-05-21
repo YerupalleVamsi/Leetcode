@@ -5,9 +5,7 @@ public:
         for(int i=0;i<nums.size();i++){
             minheap.push(nums[i]);
             if(minheap.size()>k)
-                minheap.pop();
-        }
+                minheap.pop();}
         return minheap.top();
-        
     }
 };

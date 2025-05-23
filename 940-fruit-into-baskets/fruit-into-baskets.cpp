@@ -13,8 +13,8 @@ public:
                     freq.erase(fruits[left]);
                     left++;
             }
-            if(freq.size()<=2)
-            max_length=max(max_length,right-left+1);
+            if(freq.size()<=2){
+            max_length=max(max_length,right-left+1);}
         }
         return max_length;
     }

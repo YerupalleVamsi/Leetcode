@@ -4,6 +4,7 @@ class Solution:
         max_len=0
         max_count=0
         charfreq=defaultdict(int)
+
         for end in range(len(s)):
             charfreq[s[end]]+=1
             max_count=max(max_count,charfreq[s[end]])
@@ -11,6 +12,7 @@ class Solution:
                 charfreq[s[start]]-=1
                 start+=1
             max_len=max(max_len,end-start+1)
+            
         return max_len
 
 

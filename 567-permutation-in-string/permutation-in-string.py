@@ -1,5 +1,7 @@
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
+        if len(s1)>len(s2):
+            return False
         hash=[0]*26
         for ch in s1:
             hash[ord(ch)-ord('a')]+=1

@@ -1,0 +1,7 @@
+["lc","cl","gg"]
+["ab","ty","yt","lc","cl","ab"]
+["cc","ll","xx"]
+["qo","fo","fq","qf","fo","ff","qq","qf","of","of","oo","of","of","qf","qf","of"]
+["dd","aa","bb","dd","aa","dd","bb","dd","aa","cc","bb","cc","dd","cc"]
+["ab","ty","yt","lc","cl","ab","ba"] 
+["lc","cl","gg","ak","kk"]

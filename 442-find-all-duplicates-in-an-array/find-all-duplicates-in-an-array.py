@@ -10,6 +10,3 @@ class Solution:
         res=set(res)
         res=list(res)
         return res
-
-
-        

@@ -8,5 +8,4 @@ class Solution:
             if(nums[i]==nums[i-1]):
                 res.append(nums[i])
         res=set(res)
-        res=list(res)
-        return res
+        return list(res)

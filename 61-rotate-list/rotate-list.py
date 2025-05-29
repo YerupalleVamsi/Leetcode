@@ -7,20 +7,16 @@ class Solution:
     def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
         if not head or not head.next or k == 0:
             return head
-
         temp=head
         size=1
-
         while(temp.next):
             temp=temp.next
             size+=1
-
-        k=k%size
-
+        k=k%size 
         if k==0:
-            return head
+            return head #no rotations needed 
 
-        loop=size-k
+        loop=size-k # to go to the start point 
         tail=head
 
         while(loop-1):
@@ -29,7 +25,8 @@ class Solution:
             
         curr_head=tail.next
         tail.next=None
-        temp.next=head
+        
+        temp.next=head # attach to head
         return curr_head
        
 

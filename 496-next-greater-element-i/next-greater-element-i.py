@@ -5,8 +5,8 @@ class Solution:
         map=defaultdict(int)
         for i in range(len(nums2)):
             while stack and stack[-1]<nums2[i]:
-                map[stack[-1]]=nums2[i]
-                stack.pop()
+                map[stack.pop()]=nums2[i]
+                
             stack.append(nums2[i])
         for i in range(len(nums1)):
             if nums1[i] in map:

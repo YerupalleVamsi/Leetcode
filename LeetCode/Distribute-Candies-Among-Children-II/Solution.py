@@ -1,0 +1,1 @@
+Count the number of ways to give exactly x candies to 2 distinct children (Child A and Child B), where each child can receive anywhere from 0 up to limit.

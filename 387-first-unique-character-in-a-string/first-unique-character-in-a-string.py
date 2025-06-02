@@ -1,10 +1,21 @@
-class Solution(object):
-    def firstUniqChar(self, s):
-        frequency = [0] * 26 
-        for char in s:
-            frequency[ord(char) - ord('a')] += 1  
-        for index, char in enumerate(s):
-            if frequency[ord(char) - ord('a')] == 1:
-                return index  
-        return -1
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        map={}
+        for w in s:
+            if w not in map:
+                map[w]=1
+            else:
+                map[w]+=1
+        word=""
+        for key,val in map.items():
+            if val==1:
+                word=key
+                break
+        if word=="":return -1
+        for i in range(len(s)):
+            if s[i]==word:
+                return i
+        
+
+                
         

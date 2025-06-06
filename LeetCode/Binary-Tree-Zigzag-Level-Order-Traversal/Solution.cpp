@@ -23,7 +23,8 @@ public:
             for(int i=0;i<qsize;i++){
                 TreeNode* n=q.front();
                 q.pop();
-                int idx=z? i:(qsize-1-i);
+                int idx=z? i:(qsize-1-i); // z=true --> left to right else: right to left
+                // if right to left we take the index from the back of the vector
                 s[idx]=n->val;
                 if(n->left)q.push(n->left);
                 if(n->right)q.push(n->right);

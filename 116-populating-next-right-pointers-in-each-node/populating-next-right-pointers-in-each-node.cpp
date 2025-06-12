@@ -19,7 +19,7 @@ public:
 class Solution {
 public:
     Node* connect(Node* root) {
-        if(!root ||!root->right)return root;
+        if(!root || !root->right)return root;
         root->left->next=root->right;
         if(root->next)
         root->right->next=root->next->left;

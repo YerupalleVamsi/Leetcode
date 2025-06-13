@@ -15,6 +15,7 @@ int pairs(vector<int>&nums,int currdiff){
 
 }
     int minimizeMax(vector<int>& nums, int p) {
+        if(p==0)return 0;
         int n=nums.size();
         sort(nums.begin(),nums.end());
         int low=0;

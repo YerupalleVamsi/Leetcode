@@ -1,11 +1,11 @@
 class Solution {
 public:
-int pairs(vector<int>&nums,int mid){
+int pairs(vector<int>&nums,int currdiff){
     int count=0;
     int i=0;
     int n=nums.size();
     while(i<n-1){
-        if(nums[i+1]-nums[i]<=mid){
+        if(nums[i+1]-nums[i]<=currdiff){
             count++;
             i+=2;
         }

@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    void backtrack(vector<vector<int>>&res,TreeNode* root,int targetsum,vector<int>curr){
+    void backtrack(vector<vector<int>>&res,TreeNode* root,int targetsum,vector<int>&curr){
         if(!root)return;
         curr.push_back(root->val);
         targetsum-=root->val;

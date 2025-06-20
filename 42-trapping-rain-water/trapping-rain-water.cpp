@@ -12,9 +12,6 @@
             res+=min(l_max,r_max)-nums[i];
         }
         return res;*/  // [323/324] why nigga that one tc
- 
-
-
 class Solution {
 public:
     int trap(vector<int>&nums) {

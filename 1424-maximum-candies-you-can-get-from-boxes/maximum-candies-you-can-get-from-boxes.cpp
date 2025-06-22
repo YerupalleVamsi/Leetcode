@@ -2,24 +2,39 @@ class Solution {
 public:
     int maxCandies(vector<int>& status, vector<int>& candies, vector<vector<int>>& keys, vector<vector<int>>& containedBoxes, vector<int>& initialBoxes) {
         int totalcandies=0;
-        bool open=true;
-        while(!initialBoxes.empty() && open){
-            open=false;
-            vector<int>nextBoxes;
-            for(int idx:initialBoxes){
-                if(status[idx]){
-                    open=true;
-                    nextBoxes.insert(end(nextBoxes),begin(containedBoxes[idx]),end(containedBoxes[idx]));
-                    for(int key:keys[idx]) status[key]=1;
-                    totalcandies+=candies[idx];
-                }
-                else{
-                    nextBoxes.push_back(idx);
+        int n=status.size();
+        vector<bool>opened(n,false);
+        vector<bool>canbeopened(n,false);
+        queue<int>q;
+
+        for(int box: initialBoxes){
+            canbeopened[box]=true;
+            if(status[box]==1){
+                q.push(box);
+                opened[box]=true;
+            }
+        }
+        while(!q.empty()){
+            int box=q.front();
+            q.pop();
+            totalcandies+=candies[box];
+
+            for(int key:keys[box]){
+                status[key]=1;
+                if(canbeopened[key] && !opened[key]){
+                    q.push(key);
+                    opened[key]=true;
                 }
             }
-            swap(initialBoxes,nextBoxes);
+
+            for(int next: containedBoxes[box]){
+                canbeopened[next]=true;
+                if(status[next] && !opened[next]){
+                    q.push(next);
+                    opened[next]=true;
+                }
+            }
         }
         return totalcandies;
-       
     }
 };

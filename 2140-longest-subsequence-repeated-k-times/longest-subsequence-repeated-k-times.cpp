@@ -15,22 +15,19 @@ public:
        }
        return false;
     }
-
-
-
     string longestSubsequenceRepeatedK(string s, int k) {
         unordered_map<char, int> freqMap;
         for (char ch : s) {
             freqMap[ch]++;
         }
 
-        vector<char> filtered;
+        vector<char> filtered; // the chars with freq atleast k that's what we need in ans nigga
         for (const auto& [ch, freq] : freqMap) {
             if (freq >= k) {
                 filtered.push_back(ch);
             }
         }
-        queue<string> q;
+        queue<string> q; // bfs to generate all possible combinations i tried dfs but ...  TLE!!!
         q.push("");
         string best = "";
         while (!q.empty()) {
@@ -40,7 +37,7 @@ public:
 
             if (isvalid(s, next, k)) {
                 if (next.size() > best.size() || (next.size() == best.size() && next > best)) {
-                    best = next;
+                    best = next; // updating the best which is the lexicographically largest one
                 }
                 q.push(next); 
             }

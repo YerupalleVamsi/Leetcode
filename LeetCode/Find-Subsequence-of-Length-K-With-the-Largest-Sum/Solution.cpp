@@ -1,20 +1,23 @@
 class Solution {
 public:
     vector<int> maxSubsequence(vector<int>& nums, int k) {
-        vector<pair<int, int>> temp;
-        for (int i = 0; i < nums.size(); i++) {
-            temp.push_back({nums[i], i});
+        priority_queue<pair<int, int>>max_heap;
+        vector<int>res;
+        for(int i=0;i<nums.size();i++){
+            max_heap.push({nums[i],i});
         }
-        sort(temp.begin(), temp.end(), greater<>());
-        temp.resize(k);
-        sort(temp.begin(), temp.end(), [](auto& a, auto& b) {
-            return a.second < b.second;
-        });
-        vector<int> res;
-        for (auto& p : temp) {
-            res.push_back(p.first);
+        vector<int>idx;
+        while(k>0){
+            auto it=max_heap.top();
+            max_heap.pop();
+            idx.push_back(it.second);
+            k--;
         }
-
+        sort(idx.begin(),idx.end());
+        for(int i=0;i<idx.size();i++){
+            res.push_back(nums[idx[i]]);
+        }
         return res;
+        
     }
 };

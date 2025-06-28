@@ -11,23 +11,12 @@
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
-        int size=1;
-        struct ListNode * temp = head;
-        while(temp!=NULL){
-            temp=temp->next;
-            size++;
+        ListNode* slow=head;
+        ListNode* fast=head;
+        while(fast!=NULL && fast->next!=NULL){
+            fast=fast->next->next;
+            slow=slow->next;
         }
-        int mid;
-        if (size%2==0){
-            mid=(size/2)+1;
-        }
-        mid=size/2;
-        struct ListNode * cur=head;
-        int count=1;
-        while(count!=mid){
-            cur=cur->next;
-            count++;
-        }
-        return (size%2==0)? cur : cur->next  ;
+        return slow;
     }
 };

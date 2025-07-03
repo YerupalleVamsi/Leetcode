@@ -1,33 +1,43 @@
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-class Solution:
-    def reverse(self,head:ListNode,stop:ListNode)->ListNode:
-        curr=head
-        pre=None
-        nxt=None
-        while curr!=stop:
-            nxt=curr.next
-            curr.next=pre
-            pre=curr
-            curr=nxt
-        return pre
-    def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
-        if not head or k==1:
-            return head
-        count=0
-        temp=head
-        while temp and count<k:
-            temp=temp.next
-            count+=1
-        if count==k:
-            new_head=self.reverse(head,temp)
-            head.next=self.reverseKGroup(temp,k)
-            return new_head
-        else:
-            return head        
-
-
-        
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* rev(ListNode *head,ListNode* stop){
+        ListNode * curr=head;
+        ListNode * prev=NULL,*nxt=NULL;
+        while(curr!=stop){
+            nxt=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=nxt;
+        }
+        return prev;
+    }
+    ListNode* reverseKGroup(ListNode* head, int k) {
+        if(!head || k==1){
+            return head;
+        }
+        int cnt=0;
+        ListNode* temp=head;
+        while(temp!=NULL && cnt<k){
+            temp=temp->next;
+            cnt++;
+        }
+        if(cnt==k){
+            ListNode* newhead=rev(head,temp);
+            head->next=reverseKGroup(temp,k);
+            return newhead;
+        }
+        else{
+            return head;
+        }
+    }
+};

@@ -1,11 +1,3 @@
-/*
-
-    Time Complexity : O(logN).
-
-    Space Complexity : O(logN), Recursion stack space.
-
-*/
-
 #define mod 1000000007
 class Solution {
 private:

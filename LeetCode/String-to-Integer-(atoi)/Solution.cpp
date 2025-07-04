@@ -1,26 +1,36 @@
 class Solution {
 public:
     int myAtoi(string s) {
-        vector<char>news;
-        int i=0;
+        vector<char>num;
         int n=s.size();
-        while(i<n&&s[i]==' ')i++;
-        bool isnegative=false;
-        if(i<n&&(s[i]=='-'||s[i]=='+')){
-            isnegative=(s[i]=='-');
+        // remove whitespace egoist
+        int i=0;
+        while(i<n&&(s[i]==' ')){
             i++;
         }
+        // check sign + or - and move iterator to next bruh
+        bool neg=false;
+        if(i<n && (s[i]=='-' || s[i]=='+')){
+            neg = (s[i]=='-')?true:false;
+            i++;
+        }
+        // we have to take only digits remember
         while(i<n && isdigit(s[i])){
-            news.push_back(s[i]);
+            num.push_back(s[i]);
             i++;
         }
-        long long ans=0;
-        for(char ch:news){
-            ans=ans*10+(ch-'0');
-            if(!isnegative && ans>INT_MAX) return INT_MAX;
-            if(isnegative && -ans<INT_MIN) return INT_MIN;
+
+        // now store the res
+        long long res=0;
+        for(char ch:num){
+            res=res*10+(ch-'0');
+            if(!neg && res>INT_MAX) return INT_MAX;
+            if(neg && -res<INT_MIN) return INT_MIN;
         }
-        if(isnegative) ans= -ans;
-        return (int) ans;
+        if(neg) res=-res;
+        return (int)res;
+
+
+
     }
 };

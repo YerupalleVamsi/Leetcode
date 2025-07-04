@@ -31,4 +31,4 @@ public:
         return res;
 
     }
-};
+}; // yo wtf 5% aa shit 1hr bokka

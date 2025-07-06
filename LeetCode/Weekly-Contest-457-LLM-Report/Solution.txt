@@ -7,50 +7,49 @@ public:
             {"pharmacy", 2},
             {"restaurant", 3}
         };
-        
-        vector<pair<int, string>> temp;
+
+        vector<pair<int, string>> validOnes;
         int n = code.size();
+
         for (int i = 0; i < n; i++) {
-            if (!isActive[i]) {
+            if (!isActive[i]) 
                 continue;
-            }
-            
-            auto it = priorityMap.find(businessLine[i]);
-            if (it == priorityMap.end()) {
+
+            string const& bl = businessLine[i];
+            if (priorityMap.find(bl) == priorityMap.end())
                 continue;
-            }
-            
-            string couponCode = code[i];
-            if (couponCode.empty()) {
+
+            string const& c = code[i];
+            if (c.empty())
                 continue;
+
+            bool validCode = true;
+            for (char ch : c) {
+                if (ch >= 'a' && ch <= 'z') continue;
+                if (ch >= 'A' && ch <= 'Z') continue;
+                if (ch >= '0' && ch <= '9') continue;
+                if (ch == '_') continue;
+                validCode = false;
+                break;
             }
-            
-            bool isValid = true;
-            for (char c : couponCode) {
-                if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') || c == '_')) {
-                    isValid = false;
-                    break;
-                }
-            }
-            if (!isValid) {
+
+            if (!validCode)
                 continue;
-            }
-            
-            temp.push_back({it->second, couponCode});
+
+            validOnes.push_back({priorityMap[bl], c});
         }
-        
-        sort(temp.begin(), temp.end(), [](const pair<int, string>& a, const pair<int, string>& b) {
-            if (a.first != b.first) {
+
+        sort(validOnes.begin(), validOnes.end(), [](const pair<int,string>& a, const pair<int,string>& b) {
+            if (a.first != b.first)
                 return a.first < b.first;
-            }
             return a.second < b.second;
         });
-        
+
         vector<string> result;
-        for (auto& p : temp) {
+        for (auto& p : validOnes) {
             result.push_back(p.second);
         }
-        
+
         return result;
     }
 };

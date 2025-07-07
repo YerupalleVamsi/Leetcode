@@ -1,6 +1,7 @@
 class Solution {
 public:
-    void backtrack(string &digits,string curr,unordered_map<char,string>&mpp,int currindex,vector<string>&ans){
+
+    /*void backtrack(string &digits,string curr,unordered_map<char,string>&mpp,int currindex,vector<string>&ans){
         if(curr.size()==digits.size()){
             ans.push_back(curr);
             return;
@@ -11,6 +12,18 @@ public:
                     curr+=ch;
                 backtrack(digits,curr,mpp,i+1,ans);
                 curr.pop_back();}
+        }
+    }*/  // worked but unecessary nested loop
+    void backtrack(string &digits,string curr,unordered_map<char,string>&mpp,int currindex,vector<string>&ans){
+        if(curr.size()==digits.size()){
+            ans.push_back(curr);
+            return;
+        }
+        string next=mpp[digits[currindex]];  // removed the nested for loop
+                for(char ch:next){
+                    curr+=ch;
+                backtrack(digits,curr,mpp,currindex+1,ans);
+                curr.pop_back();
         }
     }
     vector<string> letterCombinations(string digits) {

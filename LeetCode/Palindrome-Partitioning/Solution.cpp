@@ -6,7 +6,7 @@ public:
     }
     return true;
 }
-    void backtrack(vector<vector<string>>&res,vector<string> curr,string s,int currindex){
+    void backtrack(vector<vector<string>>&res,vector<string>curr,string s,int currindex){
         if(currindex==s.size())
         {res.push_back(curr);
         return;}

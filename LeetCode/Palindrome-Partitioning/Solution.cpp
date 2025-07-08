@@ -6,7 +6,7 @@ public:
     }
     return true;
 }
-    void backtrack(vector<vector<string>>&res,vector<string>curr,string s,int currindex){
+    void backtrack(vector<vector<string>>&res,vector<string>&curr,string s,int currindex){
         if(currindex==s.size())
         {res.push_back(curr);
         return;}
@@ -21,7 +21,8 @@ public:
 
     vector<vector<string>> partition(string s) {
         vector<vector<string>>res;
-        backtrack(res,{},s,0);
+        vector<string>curr;
+        backtrack(res,curr,s,0);
         return res;
     }
 };

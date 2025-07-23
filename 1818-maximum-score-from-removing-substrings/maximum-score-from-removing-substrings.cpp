@@ -1,5 +1,5 @@
 class Solution {
-public:
+public: // check the mle submissions to get an idea what we did nigga
     void helper(string &s,int first,int second,int score,int &cnt){
         stack<char>st;
         for(char ch:s)

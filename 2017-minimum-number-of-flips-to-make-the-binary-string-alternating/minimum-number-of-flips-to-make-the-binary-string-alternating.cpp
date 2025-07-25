@@ -17,11 +17,9 @@ public:
                 char winstart1= start%2 == 0? '1' : '0';
                 if(s[start]!=winstart0) c0--;
                 if(s[start]!=winstart1) c1--;
-                
-            }
-            if(i>=n-1){
                 min_cost=min({c0,c1,min_cost});
             }
+           
         }
         return min_cost;
     }

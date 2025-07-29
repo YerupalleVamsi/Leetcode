@@ -1,6 +1,9 @@
 class Solution {
 public:
     vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
+        // base
+        if(intervals.size()==0)
+        return {newInterval};
         // let us insert it first into the res 
         intervals.push_back(newInterval);
         vector<vector<int>>res;

@@ -1,6 +1,7 @@
 class Solution {
 public:
 // ok we have to count the number of subarrays with distinct OR
+// use set nigga
     int subarrayBitwiseORs(vector<int>& arr) {
     unordered_set<int> result, curr;
     int n=arr.size();

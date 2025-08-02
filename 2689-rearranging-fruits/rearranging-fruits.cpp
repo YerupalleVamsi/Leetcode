@@ -33,7 +33,7 @@ public:
             if (extra > 0) while (extra--) excess2.push_back(it.first); 
         }
 
-        if (excess1.size() != excess2.size()) return -1; 
+       
 
         sort(excess1.begin(), excess1.end());
         sort(excess2.rbegin(), excess2.rend()); // sort in descending order 

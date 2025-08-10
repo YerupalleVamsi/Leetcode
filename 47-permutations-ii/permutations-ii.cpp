@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void backtrack(vector<int>&nums,vector<vector<int>>&res,vector<bool>&vis,set<vector<int>>&s,vector<int>curr){
+    void backtrack(vector<int>&nums,vector<vector<int>>&res,vector<bool>&vis,set<vector<int>>&s,vector<int>&curr){
         if(curr.size()==nums.size() && s.find(curr)==s.end()){
             res.push_back(curr);
             s.insert(curr);
@@ -21,7 +21,8 @@ public:
         int n=nums.size();
         set<vector<int>>s;
         vector<bool>vis(n,false);
-        backtrack(nums,res,vis,s,{});
+        vector<int>curr;
+        backtrack(nums,res,vis,s,curr);
         return res;
     }
 };

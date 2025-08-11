@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<long long> T; 
+    vector<long long> T; // segment Tree same as we used in fruits into baskets - 3
     const long long MOD = 1e9 + 7;
     void build(vector<long long>& arr, int tl, int tr, int node) {
         if (tl == tr) {

@@ -9,8 +9,7 @@ public:
     bool backtrack(vector<double>&real){
         if(real.size()==1)return fabs(real[0]-tar)<1e-6;
         for(int i=0;i<real.size();i++){
-            for(int j=0;j<real.size();j++){
-                if(i==j) continue;
+            for(int j=i+1;j<real.size();j++){
                 vector<double>next;
                 for(int k=0;k<real.size();k++)
                 if(k!=i && k!=j)

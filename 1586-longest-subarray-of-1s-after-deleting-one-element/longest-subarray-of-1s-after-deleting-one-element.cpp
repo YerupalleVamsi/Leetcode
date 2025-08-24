@@ -17,6 +17,6 @@ public:
             max_len=max(max_len,i-start+1);
 
         }
-        return max_len-1;
+        return max_len-1;// must delete atleast 1 even there are no 0's
     }
 };

@@ -1,11 +1,7 @@
 class Solution {
 public:
     double maxAverageRatio(vector<vector<int>>& c, int rem) {
-        auto cmp = [](const pair<double, pair<int, int>>& a, const pair<double, pair<int, int>>& b) {
-            return a.first < b.first; // dont be scared nigga this is a custom comparator for pq
-        };
-priority_queue<pair<double, pair<int, int>>, vector<pair<double, pair<int, int>>>, decltype(cmp)> pq(cmp);
-
+    priority_queue<pair<double, pair<int, int>>> pq;
         for(auto i:c){
             int pass=i[0];
             int total=i[1];

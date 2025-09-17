@@ -4,14 +4,12 @@ struct Compare {
     bool operator()(const pair<string,int> &a, const pair<string,int> &b) {
         if (a.second == b.second) {
             return a.first > b.first;  
-            // if ints are equal, smaller string should come first
         }
         return a.second < b.second;  
-        // smaller int has higher priority (max-heap on int)
     }
 };
     unordered_map<string,string>fc;
-    unordered_map<string,int>fr;
+    unordered_map<string,int>fr; // for checking the new ratings of foods
     unordered_map<string,priority_queue<pair<string,int>,vector<pair<string,int>>,Compare>>heap_map;
 
     FoodRatings(vector<string>& foods, vector<string>& cuisines, vector<int>& ratings) {
@@ -38,7 +36,7 @@ struct Compare {
     while (!pq.empty()) {
         string food = pq.top().first;
         int rating = pq.top().second;
-        if (fr[food] == rating) return food;  // checking if the food is has the new updated rating ...
+        if (fr[food] == rating) return food;  // checking if the food is has the new updated rating ... else thats the old rating na that is outdated and we should not consider
         pq.pop(); 
     }
     return "";

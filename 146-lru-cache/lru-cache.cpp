@@ -53,7 +53,7 @@ public:
             Node* lru = tail->prev;
             remove(lru);
             mpp.erase(lru->key);
-            delete lru;
+    
         }
         Node * cache = new Node(key,value);
         mpp[key] = cache;

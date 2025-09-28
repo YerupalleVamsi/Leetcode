@@ -11,7 +11,7 @@ public:
         for(int i=n-1;i>=2;i--){
             if(istriangle(nums[i],nums[i-1],nums[i-2])){
                 int sum=nums[i]+nums[i-1]+nums[i-2];
-                res=max(res,sum);
+                return sum;
             }
         }
         return res;

@@ -1,4 +1,32 @@
+// class Solution {
+// public:
+//     int recur(string &s,string &t,int idx,string curr){
+//         if(curr.size()>t.size()) return 0;
+//         if(idx == s.size()){
+//            if(curr.size()==t.size()){
+//             if(curr==t)return 1;
+//             else
+//             return 0;
+//         }
+//         else{
+//             return 0;
+//         } 
+//         }
+//         if(curr.size()==t.size()){
+//             if(curr==t)return 1;
+//             else
+//             return 0;
+//         }
+//         int take = recur(s,t,idx+1,curr+s[idx]);
+//         int not_take = recur(s,t,idx+1,curr);
+//         return take+not_take; 
 
+//     }
+//     int numDistinct(string s, string t) {
+//         if(t.size() > s.size()) return 0;
+//         return recur(s,t,0,"");
+//     }
+// };
 class Solution {
 public:
     vector<vector<int>> dp;

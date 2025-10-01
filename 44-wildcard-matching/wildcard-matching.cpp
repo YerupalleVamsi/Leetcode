@@ -3,7 +3,7 @@ public:
     bool backtrack(string &s, string &p,int i, int j,vector<vector<int>>&dp){
         if (j == p.size()) return i == s.size();
         if (i == s.size()) {
-    // remaining pattern must be all '*'
+        // remaining pattern must be all '*'
         for (int k = j; k < p.size(); k++) {
             if (p[k] != '*') return false;
         }

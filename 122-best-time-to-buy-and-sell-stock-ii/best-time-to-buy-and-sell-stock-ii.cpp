@@ -5,7 +5,7 @@ public:
         int curr_min=nums[0];
         for(int i=1;i<nums.size();i++){
             int cost = nums[i]-curr_min;
-            cout << cost << " ";
+            // cout << cost << " ";
             if(cost>0){
                 profit+=cost;
                 curr_min = INT_MAX;

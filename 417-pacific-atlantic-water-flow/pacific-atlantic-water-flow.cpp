@@ -34,7 +34,6 @@ public:
         }
         return vis;
     }
-
     vector<vector<int>> pacificAtlantic(vector<vector<int>>& heights) {
         int R = heights.size();
         int C = heights[0].size();
@@ -49,19 +48,15 @@ public:
             pacific.push_back({0, j});
             atlantic.push_back({R-1, j});
         }
-
         set<pair<int,int>> p = bfs(pacific, heights);
         set<pair<int,int>> a = bfs(atlantic, heights);
-
         set<pair<int,int>> P_A;
         set_intersection(p.begin(), p.end(), a.begin(), a.end(),
                          inserter(P_A, P_A.begin()));
-
         vector<vector<int>> res;
         for (auto &p : P_A) {
             res.push_back({p.first, p.second});
         }
-
         return res;
     }
 };

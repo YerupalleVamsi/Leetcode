@@ -8,10 +8,10 @@ public:
         for(int i=0;i<m;i++){
             pre[0] += skill[0] * mana[i];
             for(int j=1;j<n;j++){
-                pre[j] = max(pre[j],pre[j-1]) + 1LL *mana[i] * skill[j]; 
+                pre[j] = max(pre[j],pre[j-1]) + 1LL *mana[i] * skill[j];  // max time of prev wiz and curr wiz in completing last portion + curr mana * skill
             }
             for(int j = n-1;j>0;j--){
-                pre[j-1] = pre[j] - 1LL*mana[i] * skill[j];
+                pre[j-1] = pre[j] - 1LL*mana[i] * skill[j]; // backtrack
             }
         }
         return pre[n-1];

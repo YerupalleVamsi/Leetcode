@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int solve(vector<string>&words,string curr,set<string>&s,unordered_map<string,int>&dp){
+    int solve(vector<string>&words,string curr,unordered_set<string>&s,unordered_map<string,int>&dp){
         if(dp.find(curr)!=dp.end())return dp[curr];
         if(s.find(curr)==s.end()){
             return 0;
@@ -17,7 +17,7 @@ public:
         // ["a","b","ba","bca","bda","bdca"]
         // a ba bda bdca
         int n= words.size();
-        set<string> s(words.begin(),words.end());
+        unordered_set<string> s(words.begin(),words.end());
         int maxi=INT_MIN;
         unordered_map<string,int>dp;
         for(int i=0;i<n;i++)

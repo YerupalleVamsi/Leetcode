@@ -6,7 +6,7 @@ public:
         if(dp[l][r]!=-1) return dp[l][r];
         int coins = 0;
         for(int k=l;k<=r;k++){
-            long long curr = 1LL * nums[l-1]*nums[k]*nums[r+1] + solve(nums,l,k-1,dp) + solve(nums,k+1,r,dp);
+            long long curr = nums[l-1]*nums[k]*nums[r+1] + solve(nums,l,k-1,dp) + solve(nums,k+1,r,dp);
             if(curr > coins)
             coins = curr;
         }

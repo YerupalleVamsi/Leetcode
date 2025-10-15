@@ -4,7 +4,6 @@ public:
         int  n = image.size();
         int m = image[0].size();
         vector<vector<bool>>vis(n+1,vector<bool>(n+1,false));
-        // all set to false;
         queue<pair<int,int>>q;
         q.push({sr,sc});
         vis[sr][sc] =  true;
@@ -23,10 +22,8 @@ public:
                 if(dx>=0 && dx < n && dy >=0 && dy < m && !vis[dx][dy] && image[dx][dy] == red ){
                     vis[dx][dy] = true;
                     image[dx][dy] = color;
-                    q.push({dx,dy});
-                }
-            }
-            }
+                    q.push({dx,dy});}
+            }}
         }
         image[sr][sc]=color;
         return image;

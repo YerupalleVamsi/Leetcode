@@ -17,7 +17,7 @@ public:
                 }
             }
             res = res + to_string(cnt) + curr.back();
-            cout << res << " " << n << endl;
+            // cout << res << " " << n << endl;
             curr = res; 
         }
         return curr;

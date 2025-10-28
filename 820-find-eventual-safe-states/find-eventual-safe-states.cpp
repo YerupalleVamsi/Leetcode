@@ -16,12 +16,6 @@ public:
             outdeg[u]++;
         }
         }
-        // cout << outdeg.size() << endl;
-        // for(int i : outdeg)
-        // cout <<  i << " ";
-
-        // outdeg  -- 2 2 1 1 1 0 0
-
         for(int i=0;i<N;i++){
             if(outdeg[i]==0){
                 q.push(i);

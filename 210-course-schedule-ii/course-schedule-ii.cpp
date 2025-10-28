@@ -33,7 +33,6 @@ public:
         if(res.size()==N){
             return res;
         }
-        vector<int>r;
-        return r;
+        return {};
     }
 };

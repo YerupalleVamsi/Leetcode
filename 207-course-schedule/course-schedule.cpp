@@ -9,7 +9,6 @@ public:
         for(auto it: prereq){
             indeg[it[0]] ++ ;
         }
-        vector<int>topo;
         queue<int>q;
         for (int i = 0; i < N; i++) {
         if (indeg[i] == 0) {
@@ -20,7 +19,7 @@ public:
         while(!q.empty()){
             int cur = q.front();
             q.pop();
-            topo.push_back(cur);
+            N--;
             for(int i:adj[cur]){
                 indeg[i]--;
                 if(indeg[i] == 0){
@@ -28,6 +27,6 @@ public:
                 }
             }
         }
-        return topo.size() == N ;
+        return N == 0 ? 1:0;
     }
 };

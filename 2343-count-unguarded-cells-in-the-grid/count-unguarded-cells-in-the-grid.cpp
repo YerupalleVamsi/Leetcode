@@ -2,10 +2,6 @@ class Solution {
 public:
     int countUnguarded(int m, int n, vector<vector<int>>& guards, vector<vector<int>>& walls) {
         vector<vector<int>>grid(m,vector<int>(n,0));
-        // -1 - wall
-        //  0 - not visited or un guarded
-        //  1 - guard
-        //  2 - GUARDED
         for(auto it:walls){
             grid[it[0]][it[1]] = -1;
         }

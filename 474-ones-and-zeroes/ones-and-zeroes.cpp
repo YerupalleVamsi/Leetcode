@@ -13,7 +13,7 @@ public:
         int not_take = rec(strs, zero, one, i + 1);
 
         int take = INT_MIN;
-        if (zero + zeros[i] <= tar1 && one + ones[i] <= tar2) { // 0/1 knapsack type problem
+        if (zero + zeros[i] <= tar1 && one + ones[i] <= tar2) {
             take = 1+rec(strs, zero + zeros[i], one + ones[i], i + 1);
         }
 

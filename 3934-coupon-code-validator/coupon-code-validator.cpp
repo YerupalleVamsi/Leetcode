@@ -1,9 +1,6 @@
 class Solution {
 public:
     vector<string> validateCoupons(vector<string>& code, vector<string>& businessLine, vector<bool>& isActive) {
-        // code[i] => [a-z,A-Z,0-9] and['_'];
-        // businessLine[i] => {"electronics", "grocery", "pharmacy", "restaurant"}
-        // isActive[i] is true;
         unordered_set<string>s = {"electronics", "grocery", "pharmacy", "restaurant"};
         vector<pair<string,string>> cb;
         for(int i=0;i<code.size();i++){

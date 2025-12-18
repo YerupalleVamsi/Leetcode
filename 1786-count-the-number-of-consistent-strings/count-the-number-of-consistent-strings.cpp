@@ -5,13 +5,9 @@ public:
         unordered_map<char,int>mpp;
         for(auto it:allowed) mpp[it]++;
         for(auto it:words){
-            unordered_map<char,int>mp;
-            for(auto c:it){
-                mp[c]++;
-            }
             bool s = true;
-            for(auto [k,v]:mp){
-                if(!mpp.count(k)){
+            for(auto x:it){
+                if(!mpp.count(x)){
                     s = false;
                 }
             }

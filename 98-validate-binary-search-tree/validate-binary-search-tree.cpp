@@ -11,20 +11,22 @@
  */
 class Solution {
 public:
-vector<int>nodes;
+    typedef long long ll;
+    ll prev = LLONG_MIN;
+    bool check=true;
     void inorder(TreeNode *root){
         if(!root) return;
         inorder(root->left);
-        nodes.push_back(root->val);
+        if(root->val>prev){
+            prev=root->val;
+        }
+        else{
+        check=false;
+        return ;}
         inorder(root->right);
     }
     bool isValidBST(TreeNode* root) {
         inorder(root);
-        for(int i=0;i<nodes.size()-1;i++){
-            if(nodes[i+1]<=nodes[i]){
-                return false;
-            }
-        }
-        return true;
+        return check;
     }
 };
